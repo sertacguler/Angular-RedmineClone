@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="d-flex justify-content-between p-3 mb-2 bg-secondary text-white shadow-sm">
+        <div class="text-left"><b>Ana Sayfa</b></div>
+        <div class="text-right">
+            <button routerLink="/addtask" class="btn btn-light btn-sm mr-4">Add Tasks</button>
+            <button routerLink="/tasks" class="btn btn-light btn-sm mr-2">Tasks</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8"><router-outlet></router-outlet></div>
+        <div class="col-2"></div>    
+    </div>
+</div>

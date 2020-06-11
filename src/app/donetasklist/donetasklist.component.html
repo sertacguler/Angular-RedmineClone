@@ -1,0 +1,5 @@
+<div *ngIf="doneitemService.listItem.length">
+    <div class="mb-1" *ngFor='let item of doneitemService.listItem'>
+        <app-taskbox [item]="item"></app-taskbox>
+    </div>
+  </div>
