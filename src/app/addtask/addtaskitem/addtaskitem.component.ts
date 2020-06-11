@@ -1,7 +1,7 @@
-import { Component, OnInit, Input} from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import {AdditemService} from '../../services/additem.service';
 import {Task} from '../../DTO/taskDto';
-import { FormGroup, FormControl,FormBuilder } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder} from '@angular/forms';
 
 @Component({
   selector: 'app-addtaskitem',
@@ -10,12 +10,10 @@ import { FormGroup, FormControl,FormBuilder } from '@angular/forms';
 })
 export class AddtaskitemComponent implements OnInit{
 
-  disableButton:boolean = false;
   id:number;
-  @Input() todoitem:string = "";
-  denemeObj = {} as Task;
+  denemeObj:Task;
 
-  categories = ['ANKARA', 'ISTANBUL', 'IZMIR', 'ADANA'];
+  categories = ['BAR', 'STOK', 'MEDICAL', 'ARGE'];
   profileForm = new FormGroup({
     title : new FormControl(''),
     detail : new FormControl(''),
@@ -36,7 +34,9 @@ export class AddtaskitemComponent implements OnInit{
     this.additemService.sendItemToService(this.denemeObj);
   }
 
-/*
+  /*
+  disableButton:boolean = false;
+  @Input() todoitem:string = "";
   changes(event:string){
     this.todoitem = event;
     this.doDisableButton();
@@ -48,11 +48,12 @@ export class AddtaskitemComponent implements OnInit{
     this.additemService.sendItemToService(this.todoitem);
     this.todoitem = "";
     this.doDisableButton();
-  }*/
+  }
   
   doDisableButton(){
     this.disableButton = this.todoitem.trim() === "" ? true : false;
   }
+  */
   
   addperson(){}
 

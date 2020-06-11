@@ -1,4 +1,4 @@
-<div class="input-group mb-3" style="max-width: 350px; min-width: 350px;">
+<div class="input-group-lg mb-3" style="max-width: 400px; min-width: 400px;">
   
    <!-- <input type="text" class="form-control" [(ngModel)]="todoitem" (ngModelChange)="changes($event)" placeholder="Todo Item">
     <div class="input-group-append">
@@ -33,7 +33,7 @@
           <option [value]="category" *ngFor="let category of categories" >{{category}}</option>
         </select>
       </div>
-      <button type="submit" class="btn btn-primary" (click)="addperson()" [disabled]="disableButton" >Sign in</button>
+      <button type="submit" class="btn btn-primary" (click)="addperson()" >Sign in</button>
     </form>
 
 </div>

@@ -12,6 +12,7 @@ import { TasksComponent } from './tasks/tasks.component';
 
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import { AddtasksboxComponent } from './addtask/addtasksbox/addtasksbox.component';
 
 const routes: Routes = [
     { path: 'addtask', component: AttachtaskComponent },
@@ -27,7 +28,8 @@ const routes: Routes = [
     AddtaskitemComponent,
     TaskboxComponent,
     AttachtaskComponent,
-    TasksComponent
+    TasksComponent,
+    AddtasksboxComponent
   ],
   imports: [
     BrowserModule,
