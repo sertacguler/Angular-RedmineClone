@@ -5,35 +5,37 @@
       <button class="btn btn-outline-primary" (click)="addItem()" [disabled]="disableButton" type="button">Button</button>
     </div>-->
 
-    <form  [formGroup]="profileForm" (ngSubmit)="onSubmit()">
-      <div class="form-group">
-        <label for="inputEmail4">Title</label>
-        <input type="text" value class="form-control" formControlName="title"  id="inputEmail4"/>
+    <form  [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+      <div formGroupName="person" novalidate>
+        <div class="form-group">
+          <label for="inputEmail4">Title</label>
+          <input type="text" value class="form-control" formControlName="title"  id="inputEmail4"/>
+        </div>
+        <div class="form-group">
+          <label for="inputPassword4">Detail</label>
+          <textarea class="form-control"  formControlName="detail"  id="inputPassword4"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="inputAddress">End Date</label>
+          <input type="text" class="form-control" formControlName="enddate" id="inputAddress"/>
+        </div>
+        <div class="form-group">
+          <label for="inputAddress">State</label>
+          <input type="text" class="form-control" formControlName="state" id="inputAddress"/>
+        </div>
+        <div class="form-group">
+          <label for="inputAddress2">Alterations</label>
+          <input type="text" class="form-control" formControlName="alterations" id="inputAddress2"/>
+        </div>
+        <div class="form-group">
+          <label for="inputCategory">Category</label>
+          <select id="inputState" class="form-control"  formControlName="category">
+            <option selected disabled>Choose...</option>
+            <option [value]="category" *ngFor="let category of categories" >{{category}}</option>
+          </select>
+        </div>
       </div>
-      <div class="form-group">
-        <label for="inputPassword4">Detail</label>
-        <textarea class="form-control"  formControlName="detail"  id="inputPassword4"></textarea>
-      </div>
-      <div class="form-group">
-        <label for="inputAddress">End Date</label>
-        <input type="text" class="form-control" formControlName="enddate" id="inputAddress"/>
-      </div>
-      <div class="form-group">
-        <label for="inputAddress">State</label>
-        <input type="text" class="form-control" formControlName="state" id="inputAddress"/>
-      </div>
-      <div class="form-group">
-        <label for="inputAddress2">Alterations</label>
-        <input type="text" class="form-control" formControlName="alterations" id="inputAddress2"/>
-      </div>
-      <div class="form-group">
-        <label for="inputCategory">Category</label>
-        <select id="inputState" class="form-control"  formControlName="category">
-          <option selected disabled>Choose...</option>
-          <option [value]="category" *ngFor="let category of categories" >{{category}}</option>
-        </select>
-      </div>
-      <button type="submit" class="btn btn-primary" (click)="addperson()" >Sign in</button>
+      <button type="submit" class="btn btn-primary" (click)="addperson()" >Save</button>
     </form>
 
 </div>

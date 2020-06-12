@@ -17,8 +17,12 @@ export class AdditemService {
     console.log(this.listItem);
   }
   
-  deleteItem(_item:string){
-    //this.listItem = this.listItem.filter(item => item !== _item)
+  /*deleteItem(_item:string){
+    this.listItem = this.listItem.filter(item => item !== _item)
+  }*/
+
+  deleteItem(_item:number){
+    this.listItem = this.listItem.filter(item => item.id !== _item)
   }
   
 }

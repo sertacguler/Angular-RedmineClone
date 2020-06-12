@@ -13,10 +13,12 @@ import { TasksComponent } from './tasks/tasks.component';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { AddtasksboxComponent } from './addtask/addtasksbox/addtasksbox.component';
+import { UpdatetaskComponent } from './updatetask/updatetask.component';
 
 const routes: Routes = [
     { path: 'addtask', component: AttachtaskComponent },
     { path: 'tasks', component: TasksComponent },
+    { path: 'update', component: UpdatetaskComponent },
 ];
 
 @NgModule({
@@ -29,7 +31,8 @@ const routes: Routes = [
     TaskboxComponent,
     AttachtaskComponent,
     TasksComponent,
-    AddtasksboxComponent
+    AddtasksboxComponent,
+    UpdatetaskComponent
   ],
   imports: [
     BrowserModule,

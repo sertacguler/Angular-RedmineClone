@@ -1,21 +1,21 @@
-export interface Task {
+export class Task {
     id:number;
-    title:string;
+    title:string = "";
 
-    createdate:any;
-    createuser:string;
-    enddate:any;
+    createdate:any = "";
+    createuser:string = "";
+    enddate:any = "";
 
-    updatedate:any;
-    updateuser:string;
-    alterations:string;
+    updatedate:any = "";
+    updateuser:string = "";
+    alterations:string = "";
 
-    detail:string;
+    detail:string = "";
 
-    addjpg:string;
-    addtxt:string;
+    addjpg:string = "";
+    addtxt:string = "";
 
-    category:string;
+    category:string = "";
 
-    state:string;
+    state:string = "";
   }

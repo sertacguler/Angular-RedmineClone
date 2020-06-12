@@ -16,4 +16,10 @@ export class AddtasksboxComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  deleteItem(index:number){
+    this.additemService.deleteItem(index);
+  }
+
+  settingItem(index:number){}
+
 }

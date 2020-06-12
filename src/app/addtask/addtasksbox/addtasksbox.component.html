@@ -11,7 +11,7 @@
         </div>
     </div>
     <div class="text-center" style="margin-top: auto; margin-bottom: auto; max-width: 100px; min-width: 100px;">
-        <button class="btn btn-warning fa fa-wrench btn-sm mr-1"></button>
-        <button class="btn btn-danger fa fa-trash btn-sm"></button>
+        <button class="btn btn-warning fa fa-wrench btn-sm mr-1" routerLink="/update" (click)="settingItem(item.id)"></button>
+        <button class="btn btn-danger fa fa-trash btn-sm" (click)="deleteItem(item.id)"></button>
     </div>
 </div>

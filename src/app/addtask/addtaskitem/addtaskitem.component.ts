@@ -10,51 +10,29 @@ import { FormGroup, FormControl, FormBuilder} from '@angular/forms';
 })
 export class AddtaskitemComponent implements OnInit{
 
+  contactForm: FormGroup;
   id:number;
-  denemeObj:Task;
-
   categories = ['BAR', 'STOK', 'MEDICAL', 'ARGE'];
-  profileForm = new FormGroup({
-    title : new FormControl(''),
-    detail : new FormControl(''),
-    enddate : new FormControl(''),
-    state : new FormControl(''),
-    alterations : new FormControl(''),
-    category : new FormControl(''),
-  });
 
-  constructor(private additemService:AdditemService) {}
+  constructor(private additemService:AdditemService,private formBuilder: FormBuilder) {
+    this.contactForm = this.createFormGroup(formBuilder);
+  }
   
   ngOnInit() {}
-  
-  onSubmit(){
-    this.denemeObj = this.profileForm.value;
-    this.denemeObj.createdate = new Date().toLocaleString('tr-TR', { timeZone: 'UTC' });
-    this.denemeObj.id = Math.random();
-    this.additemService.sendItemToService(this.denemeObj);
+
+  createFormGroup(formBuilder: FormBuilder) {
+    return formBuilder.group({
+      person: formBuilder.group(new Task())
+    });
   }
 
-  /*
-  disableButton:boolean = false;
-  @Input() todoitem:string = "";
-  changes(event:string){
-    this.todoitem = event;
-    this.doDisableButton();
-    this.denemeObj.title = event;
-    console.log(this.denemeObj);
+  onSubmit(){
+    const result: Task = Object.assign({}, this.contactForm.value.person);
+    result.createdate = new Date().toLocaleString('tr-TR', { timeZone: 'UTC' });
+    result.id = Math.random();
+    this.additemService.sendItemToService(result);
   }
-  
-  addItem(){
-    this.additemService.sendItemToService(this.todoitem);
-    this.todoitem = "";
-    this.doDisableButton();
-  }
-  
-  doDisableButton(){
-    this.disableButton = this.todoitem.trim() === "" ? true : false;
-  }
-  */
-  
+
   addperson(){}
 
   }
