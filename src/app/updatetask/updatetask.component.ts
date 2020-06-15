@@ -20,7 +20,7 @@ export class UpdatetaskComponent implements OnInit {
 
   updateFormGroup(formBuilder: FormBuilder){
     return formBuilder.group({
-      person: formBuilder.group(this.additemService.listItem.find(findObject))
+      person: formBuilder.group(this.additemService.listItem.find(this.findObject))
     });
   }
 
